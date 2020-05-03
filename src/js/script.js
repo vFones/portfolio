@@ -2,22 +2,31 @@ function enable_submit(){
   document.getElementById("email-form-button").disabled = false;
 }
 
-function set_theme() {
-  const is_dark = window.matchMedia("(prefers-color-scheme: dark)").matches
-  if(is_dark) {
-    dark_mode()
-    console.log('Dark mode')
+window.onload = function set_theme() {
+  var hour = new Date().getHours();
+  console.log('It\'s '+hour)
+  if(hour < 7 || hour > 19) {
+    dark_mode();
   }
 }
 
 function toggle_theme() {
-  $("#dark_mode_button").click(function(){
-      dark_mode();
-  }); 
+  document.getElementById("dark_mode_button").onclick(dark_mode());
 }
 
 function dark_mode(){
-  $(".uk-dark").toggleClass("uk-light");
-  $(".uk-background-muted").toggleClass("uk-background-secondary");
+
+  const dark_foregrounds = Array.from(document.querySelectorAll(".uk-dark"));
+  dark_foregrounds.forEach(element => {
+    element.classList.toggle("uk-light");
+  });
+
+  const light_backgrounds =Array.from(document.querySelectorAll(".uk-background-muted"));
+  light_backgrounds.forEach(element => {
+    element.classList.toggle("uk-background-secondary");
+  });
+
+  
+
   console.log("Toggle dark/light")
 }
