@@ -1,4 +1,4 @@
-function enable_send_email(){
+function enable_submit(){
   document.getElementById("email-form-button").disabled = false;
 }
 
