@@ -5,7 +5,7 @@ function enable_submit(){
 window.onload = function set_theme() {
   var hour = new Date().getHours();
   console.log('It\'s '+hour)
-  if(hour < 7 || hour > 19) {
+  if(hour =< 7 || hour >= 19) {
     dark_mode();
   }
 }
