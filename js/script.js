@@ -1,4 +1,4 @@
-function enable_submit(){
+function enable_submit(token){
   document.getElementById("email-form-button").submit();
 }
 
