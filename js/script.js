@@ -1,5 +1,5 @@
 function enable_submit(){
-  document.getElementById("email-form-button").disabled = false;
+  document.getElementById("email-form-button").submit();
 }
 
 window.onload = function set_theme() {
