@@ -1,5 +1,5 @@
 function enable_submit(token){
-  document.getElementById("email-form-button").submit();
+  document.getElementById("email-form").submit();
 }
 
 window.onload = function set_theme() {
